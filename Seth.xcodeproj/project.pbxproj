@@ -14,6 +14,7 @@
 		06C4DAFB1B65D116000648B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06C4DAFA1B65D116000648B8 /* Images.xcassets */; };
 		06C4DAFE1B65D116000648B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C4DAFC1B65D116000648B8 /* LaunchScreen.xib */; };
 		06C4DB0A1B65D116000648B8 /* SethTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4DB091B65D116000648B8 /* SethTests.m */; };
+		D9AF2322A4B1F029A8545A6B /* libPods-Seth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE978505204CE400BB31B2E3 /* libPods-Seth.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		06C4DB031B65D116000648B8 /* SethTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SethTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C4DB081B65D116000648B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06C4DB091B65D116000648B8 /* SethTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SethTests.m; sourceTree = "<group>"; };
+		0F2ED5A0406BF58D08F0DCF3 /* Pods-Seth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seth.release.xcconfig"; path = "Pods/Target Support Files/Pods-Seth/Pods-Seth.release.xcconfig"; sourceTree = "<group>"; };
+		B5C63BA5DA1419D9F50AC7E4 /* Pods-Seth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Seth/Pods-Seth.debug.xcconfig"; sourceTree = "<group>"; };
+		BE978505204CE400BB31B2E3 /* libPods-Seth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Seth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AF2322A4B1F029A8545A6B /* libPods-Seth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				06C4DAEC1B65D116000648B8 /* Seth */,
 				06C4DB061B65D116000648B8 /* SethTests */,
 				06C4DAEB1B65D116000648B8 /* Products */,
+				12EC8B6478A3D7A3A128025E /* Pods */,
+				5FE1BC36CBF528EBE7210FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		12EC8B6478A3D7A3A128025E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5C63BA5DA1419D9F50AC7E4 /* Pods-Seth.debug.xcconfig */,
+				0F2ED5A0406BF58D08F0DCF3 /* Pods-Seth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5FE1BC36CBF528EBE7210FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE978505204CE400BB31B2E3 /* libPods-Seth.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06C4DB0D1B65D116000648B8 /* Build configuration list for PBXNativeTarget "Seth" */;
 			buildPhases = (
+				508C0094096B155A1A7603EC /* Check Pods Manifest.lock */,
 				06C4DAE61B65D116000648B8 /* Sources */,
 				06C4DAE71B65D116000648B8 /* Frameworks */,
 				06C4DAE81B65D116000648B8 /* Resources */,
+				425022A948082148EB0E469A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		425022A948082148EB0E469A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Seth/Pods-Seth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		508C0094096B155A1A7603EC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06C4DAE61B65D116000648B8 /* Sources */ = {
@@ -347,6 +406,7 @@
 		};
 		06C4DB0E1B65D116000648B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C63BA5DA1419D9F50AC7E4 /* Pods-Seth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Seth/Info.plist;
@@ -357,6 +417,7 @@
 		};
 		06C4DB0F1B65D116000648B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2ED5A0406BF58D08F0DCF3 /* Pods-Seth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Seth/Info.plist;
@@ -418,6 +479,7 @@
 				06C4DB0F1B65D116000648B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06C4DB101B65D116000648B8 /* Build configuration list for PBXNativeTarget "SethTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +488,7 @@
 				06C4DB121B65D116000648B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
